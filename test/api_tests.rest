@@ -1,0 +1,143 @@
+# Authentication
+### Register User
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "admin1",
+  "password": "password123",
+  "role": "admin"
+}
+
+###
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "guru11",
+  "password": "password123",
+  "role": "guru"
+}
+
+###
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "siswa2",
+  "password": "password123",
+  "role": "siswa"
+}
+
+### Login User
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin1",
+  "password": "password123"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "guru11",
+  "password": "password123"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "siswa1",
+  "password": "password123"
+}
+
+### CRUD Nilai
+### Create Nilai (Guru)
+POST http://localhost:3000/api/nilai
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJHVVIxIiwicm9sZSI6Imd1cnUiLCJpYXQiOjE3MjE3NDMzMjUsImV4cCI6MTcyMTc0NjkyNX0.w293HVu7I7uQHCG1_WYsFz-2Jw6DrbC8P7HJ7j_JdVo
+Content-Type: application/json
+
+{
+  "siswaId": "SIS1",
+  "nilai": 79
+}
+
+### Edit Nilai (Guru)
+PUT http://localhost:3000/api/nilai/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJHVVIxIiwicm9sZSI6Imd1cnUiLCJpYXQiOjE3MjE3NDMxMTUsImV4cCI6MTcyMTc0NjcxNX0.TV9oiH0q0vmQbKnKd8kzOpET7fACraZ_04Doy6jsAqY
+Content-Type: application/json
+
+{
+  "nilai": 95
+}
+
+### Delete Nilai (Guru)
+DELETE http://localhost:3000/api/nilai/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJHVVIxIiwicm9sZSI6Imd1cnUiLCJpYXQiOjE3MjE3NDMxMTUsImV4cCI6MTcyMTc0NjcxNX0.TV9oiH0q0vmQbKnKd8kzOpET7fACraZ_04Doy6jsAqY
+
+### Get All Nilai (Authenticated Users)
+GET http://localhost:3000/api/nilai
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJTSVMxIiwicm9sZSI6InNpc3dhIiwiaWF0IjoxNzIxNzQyNDgzLCJleHAiOjE3MjE3NDYwODN9.QQ-LOpRGjZHnu0uvA0Cosfshp_ve9dLGi4a5kFFe_cc
+
+### CRUD Jadwal
+### Create Jadwal (Admin)
+POST http://localhost:3000/api/jadwal
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBRE0xIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzIxNzQyNDYyLCJleHAiOjE3MjE3NDYwNjJ9.Z-W7ytsyeA9fmeOcpKwtmbOf6uuichbillOE5V3q1uw
+Content-Type: application/json
+
+{
+  "mataPelajaran": "Ngoding",
+  "waktu": "2024-08-01T08:00:00.000Z"
+}
+
+### Edit Jadwal (Admin)
+PUT http://localhost:3000/api/jadwal/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBRE0xIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzIxNzQyNDYyLCJleHAiOjE3MjE3NDYwNjJ9.Z-W7ytsyeA9fmeOcpKwtmbOf6uuichbillOE5V3q1uw
+Content-Type: application/json
+
+{
+  "mataPelajaran": "Belajar Ngoding TEROS",
+  "waktu": "2024-08-02T09:00:00.000Z"
+}
+
+### Delete Jadwal (Admin)
+DELETE http://localhost:3000/api/jadwal/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBRE0xIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzIxNzQyNDYyLCJleHAiOjE3MjE3NDYwNjJ9.Z-W7ytsyeA9fmeOcpKwtmbOf6uuichbillOE5V3q1uw
+
+### Get All Jadwal (Authenticated Users)
+GET http://localhost:3000/api/jadwal
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJTSVMxIiwicm9sZSI6InNpc3dhIiwiaWF0IjoxNzIxNzQyNDgzLCJleHAiOjE3MjE3NDYwODN9.QQ-LOpRGjZHnu0uvA0Cosfshp_ve9dLGi4a5kFFe_cc
+
+### CRUD Kehadiran
+### Create Kehadiran (Guru)
+POST http://localhost:3000/api/kehadiran
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJHVVIxIiwicm9sZSI6Imd1cnUiLCJpYXQiOjE3MjE3NDMxMTUsImV4cCI6MTcyMTc0NjcxNX0.TV9oiH0q0vmQbKnKd8kzOpET7fACraZ_04Doy6jsAqY
+Content-Type: application/json
+
+{
+  "siswaId": "SIS2",
+  "tanggal": "2024-08-01T08:00:00.000Z",
+  "status": "hadir"
+}
+
+### Edit Kehadiran (Guru)
+PUT http://localhost:3000/api/kehadiran/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJHVVIxIiwicm9sZSI6Imd1cnUiLCJpYXQiOjE3MjE3NDMxMTUsImV4cCI6MTcyMTc0NjcxNX0.TV9oiH0q0vmQbKnKd8kzOpET7fACraZ_04Doy6jsAqY
+Content-Type: application/json
+
+{
+  "status": "tidak hadir"
+}
+
+### Delete Kehadiran (Guru)
+DELETE http://localhost:3000/api/kehadiran/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJHVVIxIiwicm9sZSI6Imd1cnUiLCJpYXQiOjE3MjE3NDMxMTUsImV4cCI6MTcyMTc0NjcxNX0.TV9oiH0q0vmQbKnKd8kzOpET7fACraZ_04Doy6jsAqY
+
+### Get All Kehadiran (Authenticated Users)
+GET http://localhost:3000/api/kehadiran
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJTSVMxIiwicm9sZSI6InNpc3dhIiwiaWF0IjoxNzIxNzQyNDgzLCJleHAiOjE3MjE3NDYwODN9.QQ-LOpRGjZHnu0uvA0Cosfshp_ve9dLGi4a5kFFe_cc
